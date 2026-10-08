@@ -1,0 +1,543 @@
+@font-face {
+  font-family: "Cinzel";
+  src: url("/assets/fonts/Cinzel-Variable.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pixel Operator";
+  src: url("/assets/fonts/PixelOperator-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #060a14;
+  --bg-raised: #0a1020;
+  --surface: #0e1629;
+  --line: #1c2843;
+  --text: #e8edf6;
+  --muted: #9dabc3;
+  --cyan: #4cbcf2;
+  --cyan-deep: #1ca3ea;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --focus: var(--cyan);
+  --focus-ink: #03111c;
+  --radius: 8px;
+  --et-bg: #0e1430;
+  --et-gold: #f2d38a;
+  --et-gold-light: #fbecc4;
+  --et-steel: #a4bddc;
+  --et-ember: #e9772d;
+  --mo-bg: #0f1a13;
+  --mo-line: #3f6330;
+  --mo-moss: #8fb86a;
+  --mo-text: #e6ece1;
+}
+
+a {
+  color: var(--cyan);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(6, 10, 20, 0.85);
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 0.75rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand img {
+  width: 32px;
+  height: 36px;
+}
+
+.brand span {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand:hover {
+  color: var(--cyan);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-decoration: none;
+  padding-block: 0.25rem;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+.studio-hero,
+.not-found {
+  position: relative;
+  isolation: isolate;
+}
+
+.studio-hero::before,
+.not-found::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 115px 238px, rgba(220, 235, 255, 0.5) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 47px 262px, rgba(220, 235, 255, 0.5) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 24px 228px, rgba(220, 235, 255, 0.4) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at 324px 21px, rgba(220, 235, 255, 0.6) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 334px 378px, rgba(220, 235, 255, 0.6) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 270px 32px, rgba(220, 235, 255, 0.25) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at 307px 15px, rgba(220, 235, 255, 0.5) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 200px 265px, rgba(220, 235, 255, 0.3) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 87px 234px, rgba(220, 235, 255, 0.4) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 85px 362px, rgba(150, 205, 255, 0.4) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 295px 15px, rgba(150, 205, 255, 0.25) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 110px 297px, rgba(150, 205, 255, 0.5) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at 693px 9px, rgba(220, 235, 255, 0.3) 0 1.2px, transparent 1.7px),
+    radial-gradient(circle at 481px 384px, rgba(220, 235, 255, 0.5) 0 1px, transparent 1.5px);
+  background-size: 233px 281px, 233px 281px, 233px 281px, 347px 383px, 347px 383px, 347px 383px, 347px 383px, 541px 467px, 541px 467px, 541px 467px, 541px 467px, 709px 613px, 709px 613px, 709px 613px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 9rem, transparent 13rem), linear-gradient(to right, #000 calc(50% - 22rem), transparent calc(50% - 18rem), transparent calc(50% + 18rem), #000 calc(50% + 22rem));
+  mask-image: linear-gradient(to bottom, #000 9rem, transparent 13rem), linear-gradient(to right, #000 calc(50% - 22rem), transparent calc(50% - 18rem), transparent calc(50% + 18rem), #000 calc(50% + 22rem));
+}
+
+.studio-hero {
+  padding-block: 3rem 3.5rem;
+  text-align: center;
+  background: radial-gradient(ellipse 50% 60% at 50% 40%, rgba(28, 163, 234, 0.12), transparent 70%);
+}
+
+.studio-hero h1 {
+  margin: 0 auto 1.5rem;
+  max-width: 19rem;
+}
+
+.studio-hero h1 img {
+  width: 100%;
+}
+
+.studio-hero .intro {
+  max-width: 34rem;
+  margin: 0 auto;
+  font-size: 1.1875rem;
+  color: var(--muted);
+}
+
+.section {
+  padding-block: 3.5rem;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.section-raised {
+  background-color: rgba(10, 16, 32, 0.8);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--cyan-deep);
+  border-radius: var(--radius);
+  background: var(--cyan-deep);
+  color: var(--focus-ink);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+.button-quiet {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.button-quiet:hover {
+  background: var(--surface);
+  border-color: var(--cyan-deep);
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.tiles {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.tile-art {
+  position: relative;
+  margin: 0;
+}
+
+.tile-art img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.tile-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+.tile-body p {
+  margin: 0;
+}
+
+.tile-body .tile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.tile-eternally {
+  border: 1px solid rgba(242, 211, 138, 0.38);
+  background: linear-gradient(180deg, var(--et-bg) 0%, #0a0e1f 100%);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.45);
+}
+
+.tile-eternally .tile-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 20, 48, 1) 0%, rgba(14, 20, 48, 0.55) 35%, rgba(14, 20, 48, 0) 65%);
+}
+
+.tile-eternally .tile-title {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 0.75rem;
+  z-index: 1;
+  margin: 0;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--et-gold);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.tile-eternally .tile-kicker {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--et-steel);
+}
+
+.tile-eternally .tile-tagline {
+  font-family: Georgia, "Palatino Linotype", serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--et-gold-light);
+}
+
+.tile-eternally .tile-text {
+  color: #d3d2dc;
+}
+
+.tile-eternally .tile-release {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--et-gold);
+}
+
+.tile-eternally .tile-release::before {
+  content: "";
+  flex: none;
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--et-gold), rgba(242, 211, 138, 0.2));
+}
+
+.tile-eternally .button {
+  border-color: #ffb578;
+  background: linear-gradient(180deg, #ff9b4d 0%, var(--et-ember) 55%, #c95a17 100%);
+  color: #1c0b02;
+  border-radius: 4px;
+}
+
+.tile-eternally .button:hover {
+  background: #ffc08a;
+}
+
+.tile-eternally .button-quiet {
+  border-color: rgba(242, 211, 138, 0.42);
+  background: transparent;
+  color: var(--et-gold);
+}
+
+.tile-eternally .button-quiet:hover {
+  border-color: var(--et-gold);
+  background: rgba(242, 211, 138, 0.08);
+  color: var(--et-gold-light);
+}
+
+.tile-morrathil {
+  border: 1px solid var(--mo-line);
+  border-radius: 4px;
+  background: var(--mo-bg);
+}
+
+.tile-morrathil .tile-art img {
+  border-bottom: 1px solid var(--mo-line);
+}
+
+.tile-morrathil .tile-kicker {
+  font-family: "Pixel Operator", ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mo-moss);
+}
+
+.tile-morrathil .tile-title {
+  margin: 0;
+  font-family: "Pixel Operator", ui-monospace, monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  color: var(--mo-text);
+}
+
+.tile-morrathil .tile-tagline {
+  font-family: "Pixel Operator", ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--mo-moss);
+}
+
+.tile-morrathil .tile-text {
+  color: #c3cdbf;
+}
+
+.tile-morrathil .tile-release {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Pixel Operator", ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--mo-text);
+}
+
+.tile-morrathil .tile-release::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  background: var(--mo-moss);
+}
+
+.tile-morrathil .button {
+  border-color: var(--mo-line);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--mo-text);
+  font-family: "Pixel Operator", ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tile-morrathil .button:hover {
+  background: #142219;
+  border-color: var(--mo-moss);
+}
+
+.press-links {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.press-links a {
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.press-links a:hover {
+  border-color: var(--cyan-deep);
+}
+
+.press-links span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.email {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.not-found {
+  padding-block: 4rem 5rem;
+  text-align: center;
+}
+
+.not-found img {
+  width: 7rem;
+  margin: 0 auto 1.5rem;
+}
+
+.not-found h1 {
+  font-size: 2.25rem;
+}
+
+.not-found .actions {
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .studio-hero {
+    padding-block: 4.5rem 5rem;
+  }
+
+  .studio-hero h1 {
+    max-width: 26rem;
+  }
+
+  .studio-hero .intro {
+    font-size: 1.3125rem;
+  }
+
+  .section {
+    padding-block: 4.5rem;
+  }
+
+  .tile-body {
+    padding: 1.5rem;
+  }
+
+  .tile-eternally .tile-title {
+    left: 1.5rem;
+    bottom: 1rem;
+    font-size: 3.5rem;
+  }
+
+  .press-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .email {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .tiles {
+    grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .tile-eternally .tile-title {
+    font-size: 4rem;
+  }
+}

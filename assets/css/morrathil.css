@@ -15,7 +15,6 @@
 }
 
 :root {
-  color-scheme: dark;
   --bg: #0a120d;
   --bg-raised: #0f1a13;
   --surface: #142219;
@@ -28,47 +27,10 @@
   --ink-on-ember: #1a0d04;
   --pixel: "Pixel Operator", ui-monospace, "Courier New", monospace;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --gutter: 16px;
-  --max: 70rem;
   --radius: 4px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 1.0625rem;
-  line-height: 1.6;
-  overflow-wrap: break-word;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.pixelated {
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
+  --font-body: var(--sans);
+  --focus: var(--ember);
+  --focus-ink: var(--ink-on-ember);
 }
 
 a {
@@ -78,12 +40,6 @@ a {
 
 a:hover {
   color: var(--text);
-}
-
-:focus-visible {
-  outline: 3px solid var(--ember);
-  outline-offset: 3px;
-  border-radius: 2px;
 }
 
 h1,
@@ -107,40 +63,6 @@ h2 {
 
 h3 {
   font-size: 2rem;
-}
-
-p,
-ul,
-ol,
-dl {
-  margin: 0 0 1em;
-}
-
-.wrap {
-  width: 100%;
-  max-width: var(--max);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-}
-
-.narrow > * {
-  max-width: 44rem;
-}
-
-.skip-link {
-  position: absolute;
-  left: var(--gutter);
-  top: -100px;
-  z-index: 10;
-  padding: 0.5rem 1rem;
-  background: var(--ember);
-  color: var(--ink-on-ember);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.skip-link:focus {
-  top: 0.5rem;
 }
 
 .label {
@@ -204,10 +126,6 @@ dl {
   text-decoration-thickness: 2px;
 }
 
-main {
-  display: block;
-}
-
 .section {
   padding-block: 3.5rem;
 }
@@ -218,76 +136,6 @@ main {
 
 .section-raised {
   background: var(--bg-raised);
-}
-
-.cards {
-  display: grid;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.cards > li {
-  display: flex;
-}
-
-.game-card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-
-.game-card h3 {
-  margin: 0;
-}
-
-.game-card p {
-  margin: 0;
-}
-
-.game-card .card-art {
-  display: grid;
-  place-items: center;
-  min-height: 11rem;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-
-.game-card .card-art img.pixelated {
-  width: 96px;
-  height: 144px;
-}
-
-.game-card .card-art img:not(.pixelated) {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.game-card .card-art-wide {
-  min-height: 0;
-  overflow: hidden;
-}
-
-.game-card .card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
-
-.game-card .card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1rem;
-  margin-top: auto;
 }
 
 .tagline {
@@ -336,30 +184,6 @@ main {
   background: var(--surface);
   color: var(--text);
   border-color: var(--moss-deep);
-}
-
-.email {
-  font-family: var(--pixel);
-  font-size: 1rem;
-}
-
-.site-footer {
-  border-top: 1px solid var(--line);
-  padding-block: 2rem;
-  color: var(--muted);
-  font-size: 0.9375rem;
-}
-
-.site-footer p {
-  margin: 0 0 0.25rem;
-}
-
-.site-footer a {
-  color: var(--muted);
-}
-
-.site-footer a:hover {
-  color: var(--text);
 }
 
 .hero {
@@ -432,92 +256,6 @@ main {
   flex-wrap: wrap;
   gap: 0.75rem 1rem;
   margin: 0;
-}
-
-.status + .actions {
-  margin-top: 1.25rem;
-}
-
-.hero.hero-home {
-  min-height: 0;
-}
-
-.hero.hero-home::after {
-  background: linear-gradient(to bottom, rgba(10, 18, 13, 0.8) 0%, rgba(10, 18, 13, 0.94) 100%);
-}
-
-.hero-home .wrap {
-  display: grid;
-  gap: 1.5rem;
-  align-self: center;
-  padding-block: 1.5rem 3rem;
-}
-
-.hero-art img {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
-}
-
-.release {
-  display: inline-block;
-  margin: 0 0 1.25rem;
-  padding: 0.4rem 0.75rem;
-  border: 1px solid var(--ember);
-  border-radius: var(--radius);
-  background: var(--bg);
-  font-family: var(--pixel);
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.2;
-  color: var(--text);
-}
-
-.studio-line {
-  border-bottom: 1px solid var(--line);
-  padding-block: 1.25rem;
-  color: var(--muted);
-}
-
-.studio-line p {
-  margin: 0;
-}
-
-.follow {
-  font-size: 0.9375rem;
-  color: var(--muted);
-}
-
-.hero .follow {
-  margin: 1.25rem 0 0;
-}
-
-.follow-label {
-  margin-right: 0.5rem;
-  font-family: var(--pixel);
-  font-size: 1rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--moss);
-}
-
-.game-card-featured {
-  border-color: var(--moss-deep);
-}
-
-.game-card-side {
-  margin-top: 1.25rem;
-}
-
-.game-card-side .card-art {
-  min-height: 0;
-  padding-block: 1rem;
-}
-
-.game-card-side .card-art img.pixelated {
-  width: 64px;
-  height: 96px;
 }
 
 .lede {
@@ -596,25 +334,18 @@ main {
   list-style: none;
 }
 
-.gallery figure,
-.clip {
+.gallery figure {
   margin: 0;
 }
 
-.clip {
-  margin-top: 1.5rem;
-}
-
-.gallery img,
-.clip img {
+.gallery img {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
 }
 
-.gallery figcaption,
-.clip figcaption {
+.gallery figcaption {
   margin-top: 0.5rem;
   font-size: 0.9375rem;
   color: var(--muted);
@@ -684,23 +415,7 @@ main {
   color: var(--muted);
 }
 
-.not-found {
-  padding-block: 5rem;
-}
-
-.not-found img {
-  width: 100%;
-  max-width: 22rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-
 @media (min-width: 40rem) {
-  :root {
-    --gutter: 24px;
-  }
-
   h1 {
     font-size: 4rem;
   }
@@ -709,15 +424,10 @@ main {
     font-size: 3rem;
   }
 
-  .email {
-    font-size: 2rem;
-  }
-
   .section {
     padding-block: 4.5rem;
   }
 
-  .cards,
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -742,19 +452,6 @@ main {
   .hero .subtitle {
     font-size: 3rem;
   }
-
-  .game-card-featured h3 {
-    font-size: 3rem;
-  }
-
-  .game-card-side {
-    flex-direction: row;
-    align-items: stretch;
-  }
-
-  .game-card-side .card-art {
-    flex: 0 0 8rem;
-  }
 }
 
 @media (min-width: 64rem) {
@@ -764,10 +461,6 @@ main {
 
   .features {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .features.pairs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero {
@@ -781,45 +474,5 @@ main {
   .hero .wrap {
     align-self: center;
     padding-block: 4rem;
-  }
-
-  .hero.hero-home {
-    min-height: 40rem;
-  }
-
-  .hero-home .wrap {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-    align-items: center;
-    gap: 3rem;
-  }
-
-  .hero-home .subtitle {
-    font-size: 2rem;
-  }
-
-  .hero-home .hero-art {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .hero-home .hero-text {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .game-card-featured {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    align-items: start;
-    gap: 1.5rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
   }
 }

@@ -6,10 +6,12 @@
   <title>Eternally</title>
   <meta name="description" content="Eternally is a dark fantasy, turn-based tactical RPG with dice combat on a hex grid. Four Eternals, over 250 skills, online co-op for up to 4 players. Out on Steam for Windows on 14 October 2026.">
   <link rel="canonical" href="https://astralkranium.com/eternally/">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-  <link rel="preload" href="/assets/fonts/PixelOperator-Bold.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="/assets/css/site.css">
-  <meta name="theme-color" content="#0a120d">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/eternally/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/eternally/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/Cinzel-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/eternally.css">
+  <meta name="theme-color" content="#0a0e1d">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Astral Kranium">
   <meta property="og:title" content="Eternally">
@@ -31,12 +33,16 @@
 
   <header class="site-header">
     <div class="wrap">
-      <a class="wordmark" href="/">Astral Kranium</a>
-      <nav class="site-nav" aria-label="Main">
+      <div class="brand">
+        <a class="wordmark" href="/eternally/">Eternally</a>
+        <a class="studio-link" href="/">by Astral Kranium</a>
+      </div>
+      <nav class="site-nav" aria-label="Eternally">
         <ul>
-          <li><a href="/#games">Games</a></li>
-          <li><a href="/#press">Press</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/eternally/#game">The game</a></li>
+          <li><a href="/eternally/#eternals">Eternals</a></li>
+          <li><a href="/eternally/#screenshots">Screenshots</a></li>
+          <li><a href="/eternally/#press">Press</a></li>
         </ul>
       </nav>
     </div>
@@ -64,12 +70,18 @@
 
     <section class="section" id="game" aria-labelledby="game-section-title">
       <div class="wrap narrow">
-        <p class="lede">Eternally is a turn-based dark fantasy RPG on a hex grid, for Windows on Steam. Every attack is a dice roll, so every turn carries a little risk.</p>
         <h2 id="game-section-title">The game</h2>
+        <p class="lede">Eternally is a turn-based dark fantasy RPG on a hex grid, for Windows on Steam. Every attack is a dice roll, so every turn carries a little risk.</p>
         <div class="prose">
           <p>You play as one of four Eternals. Where you stand on the grid decides what you can reach and who can reach you, and sometimes the dice just say no.</p>
           <p>Build from over 250 skills and a set of relics made for your Eternal, then take them through an eight-level campaign. Play it alone, with up to three friends online, or with one friend on the same PC.</p>
-          <p>Eternally is made by one developer, Adam Pantak-Ripoll, who has been building it for about three years.</p>
+        </div>
+        <h3 id="story-title">How it started</h3>
+        <div class="prose">
+          <p>Eternally started three years ago as a question: what would a PvP RPG look like if it played like a board game? A hex grid, dice that decide every swing, and 2 to 4 players trying to outthink each other.</p>
+          <p>Then the playtests surprised me. Players kept teaming up, and the co-op moments were the ones they talked about afterwards. So co-op grew into a full campaign, with PvP still at its core.</p>
+          <p>I've put my heart and soul into this game for three years. I hope you enjoy playing it as much as I've enjoyed making it.</p>
+          <p>Adam</p>
         </div>
       </div>
     </section>
@@ -305,7 +317,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>A game by Adam Pantak-Ripoll.</p>
+      <p>A game by Adam Pantak-Ripoll at <a href="/">Astral Kranium</a>.</p>
       <p><a href="/eternally/privacy.html">Privacy policy</a> &middot; <a href="mailto:contact@astralkranium.com">contact@astralkranium.com</a></p>
       <p>&copy; 2026 Astral Kranium Ltd. Glasgow, United Kingdom.</p>
       <p>Astral Kranium Ltd is registered in Scotland, company number SC868626. Registered office: 3/1 25 Camphill Avenue, Glasgow, G41 3AU.</p>

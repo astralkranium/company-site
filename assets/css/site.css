@@ -220,20 +220,6 @@ main {
   background: var(--bg-raised);
 }
 
-.intro {
-  padding-block: 4rem 3rem;
-}
-
-.intro h1 {
-  max-width: 14ch;
-}
-
-.intro p {
-  max-width: 40rem;
-  color: var(--muted);
-  font-size: 1.125rem;
-}
-
 .cards {
   display: grid;
   gap: 1.25rem;
@@ -285,10 +271,9 @@ main {
   object-fit: cover;
 }
 
-.game-card .card-art-text {
-  font-family: var(--pixel);
-  font-size: 2rem;
-  color: var(--muted);
+.game-card .card-art-wide {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .game-card .card-body {
@@ -437,6 +422,104 @@ main {
   list-style: none;
 }
 
+.hero .pitch {
+  max-width: 34rem;
+  margin: 0 0 1.25rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin: 0;
+}
+
+.status + .actions {
+  margin-top: 1.25rem;
+}
+
+.hero.hero-home {
+  min-height: 0;
+}
+
+.hero.hero-home::after {
+  background: linear-gradient(to bottom, rgba(10, 18, 13, 0.8) 0%, rgba(10, 18, 13, 0.94) 100%);
+}
+
+.hero-home .wrap {
+  display: grid;
+  gap: 1.5rem;
+  align-self: center;
+  padding-block: 1.5rem 3rem;
+}
+
+.hero-art img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.release {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--ember);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-family: var(--pixel);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.studio-line {
+  border-bottom: 1px solid var(--line);
+  padding-block: 1.25rem;
+  color: var(--muted);
+}
+
+.studio-line p {
+  margin: 0;
+}
+
+.follow {
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.hero .follow {
+  margin: 1.25rem 0 0;
+}
+
+.follow-label {
+  margin-right: 0.5rem;
+  font-family: var(--pixel);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+
+.game-card-featured {
+  border-color: var(--moss-deep);
+}
+
+.game-card-side {
+  margin-top: 1.25rem;
+}
+
+.game-card-side .card-art {
+  min-height: 0;
+  padding-block: 1rem;
+}
+
+.game-card-side .card-art img.pixelated {
+  width: 64px;
+  height: 96px;
+}
+
 .lede {
   font-size: 1.1875rem;
   color: var(--text);
@@ -513,18 +596,25 @@ main {
   list-style: none;
 }
 
-.gallery figure {
+.gallery figure,
+.clip {
   margin: 0;
 }
 
-.gallery img {
+.clip {
+  margin-top: 1.5rem;
+}
+
+.gallery img,
+.clip img {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
 }
 
-.gallery figcaption {
+.gallery figcaption,
+.clip figcaption {
   margin-top: 0.5rem;
   font-size: 0.9375rem;
   color: var(--muted);
@@ -599,9 +689,11 @@ main {
 }
 
 .not-found img {
-  width: 96px;
-  height: 144px;
+  width: 100%;
+  max-width: 22rem;
   margin-bottom: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 }
 
 @media (min-width: 40rem) {
@@ -650,6 +742,19 @@ main {
   .hero .subtitle {
     font-size: 3rem;
   }
+
+  .game-card-featured h3 {
+    font-size: 3rem;
+  }
+
+  .game-card-side {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .game-card-side .card-art {
+    flex: 0 0 8rem;
+  }
 }
 
 @media (min-width: 64rem) {
@@ -659,6 +764,10 @@ main {
 
   .features {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .features.pairs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero {
@@ -672,6 +781,37 @@ main {
   .hero .wrap {
     align-self: center;
     padding-block: 4rem;
+  }
+
+  .hero.hero-home {
+    min-height: 40rem;
+  }
+
+  .hero-home .wrap {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .hero-home .subtitle {
+    font-size: 2rem;
+  }
+
+  .hero-home .hero-art {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .hero-home .hero-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .game-card-featured {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 1.5rem;
   }
 }
 

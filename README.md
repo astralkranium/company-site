@@ -18,6 +18,7 @@ assets/css/morrathil.css    Morrathil identity (morrathil/)
 assets/brand/               Studio logo (WebP for the page, transparent PNG for press), header mark, favicon, apple-touch-icon, og-studio.jpg
 assets/fonts/               Cinzel (SIL OFL, Eternally) and Pixel Operator (CC0, Morrathil), each with its licence file
 assets/eternally/           Screenshots (1920x1080 WebP, gallery copies at 960 wide), Shimmer loop, Steam capsule art, og image, favicon, apple-touch-icon
+assets/eternally/eternals/  Eternal portraits from the splash art (2:3, 800x1200 WebP plus exact 400x600 copies)
 assets/morrathil/           Trailer stills (1920x1080 WebP, gallery copies at 960 wide), sprite, icon, favicon
 assets/og-image.jpg         1200x630 Morrathil social share image (Morrathil pages)
 CNAME                       Custom domain for GitHub Pages (astralkranium.com)

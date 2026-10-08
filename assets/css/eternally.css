@@ -185,7 +185,7 @@ h3 {
 
 .section {
   position: relative;
-  padding-block: 3.5rem;
+  padding-block: 3rem;
 }
 
 .section + .section::before {
@@ -204,14 +204,20 @@ h3 {
   overflow: hidden;
 }
 
+.hero {
+  background: var(--bg);
+}
+
 .hero-image {
   position: absolute;
-  inset: 0;
+  inset: 0 0 auto;
   z-index: -2;
   width: 100%;
-  height: 100%;
+  height: 20rem;
   object-fit: cover;
-  object-position: 70% 40%;
+  object-position: 70% 80%;
+  transform: scale(1.35);
+  transform-origin: 69% 76%;
 }
 
 .hero::after {
@@ -219,12 +225,12 @@ h3 {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top, rgba(10, 14, 29, 1) 0%, rgba(10, 14, 29, 0.86) 42%, rgba(10, 14, 29, 0.35) 78%, rgba(10, 14, 29, 0.2) 100%);
+  background: linear-gradient(to bottom, rgba(10, 14, 29, 0.3) 0, rgba(10, 14, 29, 0) 5rem, rgba(10, 14, 29, 0) 13rem, var(--bg) 20rem);
 }
 
 .hero .wrap {
   align-self: end;
-  padding-block: 9rem 3rem;
+  padding-block: 16rem 3rem;
 }
 
 .hero h1 {
@@ -260,6 +266,15 @@ h3 {
   margin: 0 0 1rem;
   font-size: 1.5rem;
   line-height: 1.3;
+}
+
+.hero .hero-stats {
+  margin-bottom: 1.25rem;
+}
+
+.hero-stats .badge {
+  font-size: 1.125rem;
+  letter-spacing: 0.06em;
 }
 
 .hero .pitch {
@@ -372,6 +387,13 @@ h3 {
   color: var(--muted);
 }
 
+.prose .signoff {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
 .features {
   display: grid;
   gap: 1.25rem;
@@ -381,11 +403,8 @@ h3 {
 }
 
 .feature {
-  padding: 1.5rem;
-  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-deep) 100%);
-  border: 1px solid var(--line);
-  border-top-color: var(--line-strong);
-  border-radius: var(--radius);
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-strong);
 }
 
 .feature h3 {
@@ -417,7 +436,7 @@ h3 {
 
 .eternal-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: 50% 15%;
   background: var(--surface);
@@ -461,6 +480,78 @@ h3 {
   color: var(--muted);
 }
 
+.eternal-text .eternal-trees {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--gold-light);
+}
+
+.trees-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--display);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.stat {
+  padding: 1.25rem 0.75rem 1.1rem;
+  text-align: center;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--gold);
+  background: linear-gradient(180deg, #fff4d4 0%, var(--gold) 50%, #c79a4b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.section-lede {
+  max-width: 46rem;
+  margin: 0 0 2rem;
+}
+
+.clip-small {
+  margin-top: 1.25rem;
+}
+
+.clip-small img {
+  box-shadow: none;
+}
+
 .after-features,
 .press-notes {
   max-width: 44rem;
@@ -476,10 +567,21 @@ h3 {
 
 .gallery {
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 85%;
   gap: 1.25rem;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0.75rem;
   list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-deep) transparent;
+}
+
+.gallery li {
+  scroll-snap-align: start;
 }
 
 .gallery figure,
@@ -530,7 +632,7 @@ h3 {
 }
 
 .fact-sheet div {
-  padding-block: 0.8rem;
+  padding-block: 0.6rem;
   border-bottom: 1px solid rgba(242, 211, 138, 0.14);
 }
 
@@ -647,6 +749,37 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .gallery {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    padding-bottom: 0;
+    overflow-x: visible;
+  }
+
+  .feature {
+    padding: 1.5rem;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-deep) 100%);
+    border: 1px solid var(--line);
+    border-top-color: var(--line-strong);
+    border-radius: var(--radius);
+  }
+
+  .features-list {
+    gap: 2rem 3rem;
+  }
+
+  .features-list .feature {
+    padding: 1rem 0 0;
+    background: none;
+    border: 0;
+    border-top: 1px solid var(--line-strong);
+    border-radius: 0;
+  }
+
+  .features-list .feature-tall {
+    grid-row: span 3;
+  }
+
   .eternal-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -659,6 +792,10 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 2.5rem;
     padding: 1rem 2rem;
+  }
+
+  .fact-sheet div {
+    padding-block: 0.8rem;
   }
 
   .fact-sheet div:nth-last-child(2):nth-child(odd) {
@@ -685,6 +822,25 @@ h3 {
     min-height: 40rem;
   }
 
+  .hero-image {
+    inset: 0;
+    height: 100%;
+    object-position: 70% 40%;
+    transform: none;
+  }
+
+  .hero::after {
+    background: linear-gradient(to top, rgba(10, 14, 29, 1) 0%, rgba(10, 14, 29, 0.86) 42%, rgba(10, 14, 29, 0.35) 78%, rgba(10, 14, 29, 0.2) 100%);
+  }
+
+  .hero .wrap {
+    padding-top: 9rem;
+  }
+
+  .hero-stats .badge {
+    font-size: 1.25rem;
+  }
+
   .hero h1 {
     font-size: 5.5rem;
   }
@@ -703,13 +859,32 @@ h3 {
 }
 
 @media (min-width: 64rem) {
+
   .gallery,
   .features {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .features-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .eternal-cards {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-number {
+    font-size: 3.25rem;
+  }
+
+  .feature-tall {
+    grid-row: span 2;
   }
 
   .eternal-name {
@@ -736,8 +911,4 @@ h3 {
   .hero h1 {
     font-size: 6.5rem;
   }
-}
-
-#game h3 {
-  margin-top: 3rem;
 }

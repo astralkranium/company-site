@@ -58,15 +58,17 @@ The studio landing shows each game in its own colours on a tile (`.tile-eternall
 
 ### Eternally pages
 
-- Header: `div.brand` with the "Eternally" wordmark (links to `/eternally/`) and a small "by Astral Kranium" link home, then nav to The game, Eternals, Screenshots, Press.
+- Header: `div.brand` with the "Eternally" wordmark (links to `/eternally/`) and a small "by Astral Kranium" link home, then nav to the page sections.
 - Favicon is the gold E from the Eternally logo (`assets/eternally/favicon-32.png`). Preload `Cinzel-Variable.woff2` in the head.
 - `.wrap.narrow` columns and `.press-notes` are centred in the container on this brand (Morrathil keeps them left).
 - Cinzel is a variable font (weights 400 to 900), so any `font-weight` in that range works.
+- Game page order: hero (with the `ul.status.hero-stats` build numbers), Build it your way, Four Eternals, Gear ground and monsters, On the battlefield, Ways to play, Screenshots, How it started, Press. Only `#builds` uses boxed `.feature` cards; the other feature sections use `ul.features.features-list` (gold hairline, no box, two columns). On phones every `.feature` is a hairline list item and the gallery is a swipe row.
 
 ### Morrathil pages
 
 - Keep the look as it is. The header is the pixel "Astral Kranium" wordmark with the studio nav.
 - Pixel Operator sizes are multiples of 16px only (1rem, 2rem, 3rem, 4rem, 6rem). Other sizes blur the glyphs. This applies to the Morrathil tile on the home page too.
+
 
 ## Adding a page
 
@@ -75,11 +77,13 @@ The studio landing shows each game in its own colours on a tile (`.tile-eternall
 3. Set the canonical URL, description, og/twitter tags, favicon and theme colour for that page.
 4. Footer: keep the shared pattern (see Conventions). Game pages point the privacy link at their own `privacy.html`.
 5. Add any public page to `sitemap.xml`, and add a tile on the home page for a new game.
+6. A new page stays English unless it is added to `PAGES` in `i18n/build.py` with its strings, hreflang tags and switcher (see Languages).
 
 ## Who owns what
 
 - **Studio pages** (`index.html`, `404.html`, `studio.css`, `assets/brand/`) and **Morrathil** (`morrathil/`, `morrathil.css`, `assets/morrathil/`) belong to the main site work.
 - **Eternally** (`eternally/`, `eternally.css`, `assets/eternally/`) belongs to the Eternally thread. The home Eternally tile repeats its date, tagline and Steam button; keep them in step with `eternally/index.html`.
+- After any copy change on `index.html` or `eternally/index.html`, update `i18n/strings.json` and rerun `python i18n/build.py` so the French and Polish pages follow.
 
 ## Conventions
 
@@ -116,4 +120,4 @@ Then open http://localhost:8000.
 
 - Add the real Google Play link and pre-registration to the Morrathil page and home tile when the listing goes live.
 - Replace the trailer stills and screenshots with new captures that show the new animations.
-- On launch day, 14 October 2026 (Eternally thread): change "Wishlist on Steam" to "Buy on Steam" in the hero of `eternally/index.html` and on the home Eternally tile; change the "Out 14 October 2026" status line on `eternally/index.html` and the home tile release line ("Out 14 October 2026 on Steam") to "Out now"; update the home meta description and og/twitter descriptions, which say Eternally is out on 14 October 2026.
+- On launch day, 14 October 2026 (Eternally thread): change "Wishlist on Steam" to "Buy on Steam" in the hero of `eternally/index.html` and on the home Eternally tile; change the "Out 14 October 2026" status line on `eternally/index.html` and the home tile release line ("Out 14 October 2026 on Steam") to "Out now"; update the home meta description and og/twitter descriptions, which say Eternally is out on 14 October 2026. Then change the same strings in `i18n/strings.json` (the French and Polish text for "Buy on Steam" and "Out now" is not written yet) and rerun `python i18n/build.py`; the build stops until every changed English string has its new key.

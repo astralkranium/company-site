@@ -121,3 +121,5 @@ Then open http://localhost:8000.
 - Add the real Google Play link and pre-registration to the Morrathil page and home tile when the listing goes live.
 - Replace the trailer stills and screenshots with new captures that show the new animations.
 - On launch day, 14 October 2026 (Eternally thread): change "Wishlist on Steam" to "Buy on Steam" in the hero of `eternally/index.html` and on the home Eternally tile; change the "Out 14 October 2026" status line on `eternally/index.html` and the home tile release line ("Out 14 October 2026 on Steam") to "Out now"; update the home meta description and og/twitter descriptions, which say Eternally is out on 14 October 2026. Then change the same strings in `i18n/strings.json` (the French and Polish text for "Buy on Steam" and "Out now" is not written yet) and rerun `python i18n/build.py`; the build stops until every changed English string has its new key.
+
+- `googlef38344506cb83773.html` at the root is the Google Search Console ownership file for admin@astralkranium.com (added 24 October 2026). Google Play website verification depends on it. Never delete or rename it.
